@@ -1,0 +1,318 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2021-03-16T15:04:10.652Z",
+  "__export_source": "insomnia.desktop.app:v2021.1.0",
+  "resources": [
+    {
+      "_id": "req_f99e275c49cd4464abdffccf34bfc97d",
+      "parentId": "fld_34521bb00a174e289d932dc343553716",
+      "modified": 1615904544122,
+      "created": 1615893108890,
+      "url": " http://localhost:8080/engine-rest/process-definition/key/payment-process/start",
+      "name": "Scenario 1 Payment Timeout",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n     \"businessKey\": \"business-key-123\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_d99e186fba7249139f9aceb5f3f09cf3"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615897603925,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_34521bb00a174e289d932dc343553716",
+      "parentId": "fld_b0b7f59f9441466d852568787089d96c",
+      "modified": 1615893047083,
+      "created": 1615893047083,
+      "name": "BasicEventBasedGateway",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1615893047083,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_b0b7f59f9441466d852568787089d96c",
+      "parentId": "wrk_b06a9148c7c64a708ad19628c5b4303e",
+      "modified": 1611335452946,
+      "created": 1611335452946,
+      "name": "Camunda projecten",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1611335452946,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_b06a9148c7c64a708ad19628c5b4303e",
+      "parentId": null,
+      "modified": 1551194209577,
+      "created": 1551194209577,
+      "name": "Insomnia",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_1f1eb4e5c12547d8b2bab7bc213563d9",
+      "parentId": "fld_34521bb00a174e289d932dc343553716",
+      "modified": 1615904615639,
+      "created": 1615897603875,
+      "url": "http://localhost:8080/engine-rest/message",
+      "name": "Scenario 2 Payment Failed",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\r\n     \"messageName\": \"payment-failed-message\",\r\n     \"businessKey\": \"business-key-123\"\r\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_ff11bcd63fba4188ad2175d1c4f676a8"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615897603875,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": false,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_e0c9b7e471ac48fc9cc714d307c613e2",
+      "parentId": "fld_34521bb00a174e289d932dc343553716",
+      "modified": 1615904661197,
+      "created": 1615904574343,
+      "url": "http://localhost:8080/engine-rest/message",
+      "name": "Scenario 3 Payment Succesful",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n     \"messageName\": \"payment-successful-message\",\n     \"businessKey\": \"business-key-123\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_ff11bcd63fba4188ad2175d1c4f676a8"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615307805126,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": false,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_1ece6524a975445fb409ea0d233efdda",
+      "parentId": "fld_b0b7f59f9441466d852568787089d96c",
+      "modified": 1615309184358,
+      "created": 1611335564012,
+      "url": " http://localhost:8080/engine-rest/process-definition/key/payment-retrieval/start",
+      "name": "Start Payment Retrieval",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"variables\": {\n\t\t\"amount\": {\n\t\t\t\"value\":1250,\n\t\t\t\"type\":\"long\"\n\t\t},\n\t\t\"item\": {\n\t\t\t\"value\": \"item-xyz\"\n\t\t}\n\t}\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_d99e186fba7249139f9aceb5f3f09cf3"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1611335564012,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_756cf1473cd04c24b2426d39c5f39e49",
+      "parentId": "wrk_b06a9148c7c64a708ad19628c5b4303e",
+      "modified": 1551194209916,
+      "created": 1551194209916,
+      "name": "New Environment",
+      "data": {},
+      "dataPropertyOrder": null,
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1551194209917,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_51dda65c078d4ac8b0997817b11e1ae1",
+      "parentId": "wrk_b06a9148c7c64a708ad19628c5b4303e",
+      "modified": 1603455788124,
+      "created": 1551194209974,
+      "name": "Default Jar",
+      "cookies": [
+        {
+          "creation": "2019-11-15T11:31:48.813Z",
+          "domain": "ins-in134bel.apps.ota.ocp.duo.nl",
+          "hostOnly": true,
+          "httpOnly": true,
+          "id": "9921587762840145",
+          "key": "36277da5281325ba67815df8d57ba0fc",
+          "lastAccessed": "2020-02-11T09:07:26.250Z",
+          "path": "/",
+          "secure": true,
+          "value": "cfcb023412f2a7888ae74a02c6f2d7d8"
+        },
+        {
+          "creation": "2019-12-02T14:04:13.103Z",
+          "domain": "ins-in134bel.apps.ota.ocp.duo.nl",
+          "hostOnly": true,
+          "httpOnly": true,
+          "id": "46324961259935415",
+          "key": "39bff96873af6bd76a57254c1a5b6eb5",
+          "lastAccessed": "2019-12-02T14:20:26.193Z",
+          "path": "/",
+          "secure": true,
+          "value": "93d2acba076917469f376b8384f70397"
+        },
+        {
+          "creation": "2019-12-02T14:17:09.300Z",
+          "domain": "initiatief-nwe-school-fat.apps.ota.ocp.duo.nl",
+          "hostOnly": true,
+          "httpOnly": true,
+          "id": "2132802290393938",
+          "key": "89c19a98f404c4aa1c54f04dc7ece6cd",
+          "lastAccessed": "2020-04-06T15:44:08.463Z",
+          "path": "/",
+          "secure": true,
+          "value": "25b39936171130b6470dcf635e53e97f"
+        },
+        {
+          "creation": "2019-12-09T11:45:47.449Z",
+          "domain": "ins-mp-fat.apps.ota.ocp.duo.nl",
+          "hostOnly": true,
+          "httpOnly": true,
+          "id": "3262344414069107",
+          "key": "a0e8983880978015b3bc681c1e8ea43d",
+          "lastAccessed": "2019-12-09T11:46:50.594Z",
+          "path": "/",
+          "secure": true,
+          "value": "9c50621c4d62c6803e91736bba4de8ff"
+        },
+        {
+          "creation": "2019-12-09T11:48:01.532Z",
+          "domain": "ins-mp-in134bel.apps.ota.ocp.duo.nl",
+          "hostOnly": true,
+          "httpOnly": true,
+          "id": "8950803482365162",
+          "key": "61c41b3272570ac89a8e8dd99ef8928b",
+          "lastAccessed": "2019-12-09T11:48:01.532Z",
+          "path": "/",
+          "secure": true,
+          "value": "ec595adc34392615eabb7c807c0577c5"
+        },
+        {
+          "creation": "2020-01-17T13:43:17.762Z",
+          "domain": "ins-in134bel-sav.apps.ota.ocp.duo.nl",
+          "hostOnly": true,
+          "httpOnly": true,
+          "id": "2982204276679066",
+          "key": "5c6eac876377a7e279e89155d3890ad9",
+          "lastAccessed": "2020-01-17T13:43:17.762Z",
+          "path": "/",
+          "secure": true,
+          "value": "be86c9a0088a70a4fff00bc0af0263a8"
+        },
+        {
+          "creation": "2020-02-10T13:33:45.328Z",
+          "domain": "ins-in134bel.apps.ota.ocp.duo.nl",
+          "hostOnly": true,
+          "id": "3128768473169672",
+          "key": "JSESSIONID",
+          "lastAccessed": "2020-02-11T09:07:26.250Z",
+          "path": "/initiatief-nieuwe-school-rest",
+          "value": "yV6Riib2N1IlcMW0TcQftdbc.'8ea581222c6a'"
+        },
+        {
+          "creation": "2020-04-06T15:45:42.522Z",
+          "domain": "bestanden-aanbieden-in134.web-asz.ota.duo.nl",
+          "hostOnly": true,
+          "httpOnly": true,
+          "id": "6060801645002454",
+          "key": "JSESSIONID",
+          "lastAccessed": "2020-09-18T08:22:28.420Z",
+          "path": "/bestanden-aanbieden-rest",
+          "value": "+5x9TUenbUQ5hV3YpBR9gS+m.e4e8d932-4b7b-5e36-8ba5-23eb5e9f87c0"
+        },
+        {
+          "creation": "2020-05-12T14:48:37.041Z",
+          "domain": "ins-in134bel.web-asz.ota.duo.nl",
+          "hostOnly": true,
+          "httpOnly": true,
+          "id": "511195197257569",
+          "key": "JSESSIONID",
+          "lastAccessed": "2020-09-18T08:04:09.068Z",
+          "path": "/initiatief-nieuwe-school-rest",
+          "value": "Vhjddqe1a4imaGJIre7tV9o2.ead5586c-214a-55de-a429-cf64a025f359"
+        },
+        {
+          "creation": "2020-10-13T08:27:24.254Z",
+          "domain": "logt-fat.web-asz.ota.duo.nl",
+          "hostOnly": true,
+          "httpOnly": true,
+          "id": "36660713931906863",
+          "key": "JSESSIONID",
+          "lastAccessed": "2020-10-23T12:23:08.124Z",
+          "path": "/sessietoken",
+          "value": "BTYwGglGNzlWgnOhYkRLK74t.96aafe21-6b77-5b00-b3b8-cfeeb22c0e8d"
+        }
+      ],
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_33136a545ae147a1b2de59e74780ad15",
+      "parentId": "wrk_b06a9148c7c64a708ad19628c5b4303e",
+      "modified": 1607002036269,
+      "created": 1607002036269,
+      "fileName": "Insomnia",
+      "contents": "",
+      "contentType": "yaml",
+      "_type": "api_spec"
+    }
+  ]
+}
